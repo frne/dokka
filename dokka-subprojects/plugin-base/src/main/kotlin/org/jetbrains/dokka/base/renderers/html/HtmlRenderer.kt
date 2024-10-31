@@ -460,11 +460,7 @@ public open class HtmlRenderer(
         node: ContentEmbeddedResource,
         pageContext: ContentPage
     ) { // TODO: extension point there
-        if (node.isImage()) {
-            img(src = node.address, alt = node.altText)
-        } else {
-            println("Unrecognized resource type: $node")
-        }
+        img(src = node.address, alt = node.altText)
     }
 
     private fun FlowContent.buildRow(

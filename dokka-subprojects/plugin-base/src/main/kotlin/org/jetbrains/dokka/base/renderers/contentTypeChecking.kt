@@ -5,12 +5,6 @@
 package org.jetbrains.dokka.base.renderers
 
 import org.jetbrains.dokka.base.renderers.HtmlFileExtensions.imageExtensions
-import org.jetbrains.dokka.pages.ContentEmbeddedResource
-import java.io.File
-
-public fun ContentEmbeddedResource.isImage(): Boolean {
-    return File(address).extension.toLowerCase() in imageExtensions
-}
 
 public val String.URIExtension: String
     get() = substringBefore('?').substringAfterLast('.')

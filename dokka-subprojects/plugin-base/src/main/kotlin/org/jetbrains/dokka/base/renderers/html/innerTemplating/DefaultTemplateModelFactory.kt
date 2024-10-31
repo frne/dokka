@@ -17,7 +17,6 @@ import org.jetbrains.dokka.base.renderers.html.TEMPLATE_REPLACEMENT
 import org.jetbrains.dokka.base.renderers.html.command.consumers.ImmediateResolutionTagConsumer
 import org.jetbrains.dokka.base.renderers.html.templateCommand
 import org.jetbrains.dokka.base.renderers.html.templateCommandAsHtmlComment
-import org.jetbrains.dokka.base.renderers.isImage
 import org.jetbrains.dokka.base.resolvers.local.LocationProvider
 import org.jetbrains.dokka.base.templating.PathToRootSubstitutionCommand
 import org.jetbrains.dokka.base.templating.ProjectNameSubstitutionCommand
@@ -125,7 +124,8 @@ public class DefaultTemplateModelFactory(
                                 async = true
                         }
 
-                    resource.isImage() -> link(href = if (resource.isAbsolute) resource else "$pathToRoot$resource")
+                    else ->
+                        link(href = if (resource.isAbsolute) resource else "$pathToRoot$resource")
                 }
             }
         }

@@ -6,7 +6,6 @@ package org.jetbrains.dokka.gfm.renderer
 
 import org.jetbrains.dokka.DokkaException
 import org.jetbrains.dokka.base.renderers.DefaultRenderer
-import org.jetbrains.dokka.base.renderers.isImage
 import org.jetbrains.dokka.gfm.GfmCommand.Companion.templateCommand
 import org.jetbrains.dokka.gfm.GfmPlugin
 import org.jetbrains.dokka.gfm.ResolveLinkGfmCommand
@@ -175,10 +174,7 @@ public open class CommonmarkRenderer(
     }
 
     override fun StringBuilder.buildResource(node: ContentEmbeddedResource, pageContext: ContentPage) {
-        if (node.isImage()) {
-            append("!")
-        }
-        append("[${node.altText}](${node.address})")
+        append("![${node.altText}](${node.address})")
     }
 
     override fun StringBuilder.buildTable(
