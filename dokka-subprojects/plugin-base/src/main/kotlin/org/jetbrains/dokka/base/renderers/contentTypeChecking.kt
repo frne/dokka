@@ -19,6 +19,6 @@ public fun String.isImage(): Boolean =
     URIExtension in imageExtensions
 
 public object HtmlFileExtensions {
-    public val imageExtensions: Set<String> = setOf("png", "jpg", "jpeg", "gif", "bmp", "tif", "webp", "svg")
+    public val imageExtensions: Set<String> = setOf("png", "jpg", "jpeg", "gif", "bmp", "tif", "webp", "svg", "avif")
 }
 
