@@ -459,7 +459,7 @@ public open class HtmlRenderer(
     override fun FlowContent.buildResource(
         node: ContentEmbeddedResource,
         pageContext: ContentPage
-    ) { // TODO: extension point there
+    ) {
         img(src = node.address, alt = node.altText)
     }
 
